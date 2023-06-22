@@ -1,6 +1,20 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let obj = {}
+  let diff
+
+  for (let i = 0; i < array.length; i++) {
+    diff = target - array[i]
+
+    if (obj[diff]) {
+      return true
+    } else {
+      obj[array[i]] = true
+    }
+  }
+  return false
 }
+
 
 /* 
   Write the Big O time complexity of your function here
@@ -8,6 +22,7 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  look for difference of target number and current number provided in array, if remainder is found, return true. otherwise return false. 
 */
 
 /*
